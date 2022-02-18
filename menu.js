@@ -118,7 +118,79 @@ console.log(pizza.category)
 
 //CODE HERE
 
+// const pizza = {
+//     name: ``, 
+//     price: 0,
+//     category: ``,
+//     popularity: 0, 
+//     rating: 0,
+//     tags: [``]
+// }
 
+// let name = pizza.name()
+// const pizzaCon = pizza.constructor (name, price, category, popularity, rating, tags)
+
+
+// couldnt get name to work, skip it
+const pizzaCon = pizza.constructor (price, category, popularity, rating, tags)
+
+const obj1 = new pizza ({name: `Gluten-Free`, price: 15.99, category: `Create your own`, popularity: 2, rating: 1, tags: [`GF`, `Kids`, `Tastes like cardboard`]})
+const obj2 = new pizza ({name:`Pepporoni`, price: 8.99, category:`Large pizza`, popularity: 5, rating: 4, tags: [`Favorites`, `Kids`, `Everyone loves`]})
+const obj3 = new pizza ({name:`Cheese`, price: 7.99, category:`Large`, popularity: 3, rating: 4, tags: [`Favorites`, `Basic`, `Plain`]}) 
+const obj4 = new pizza ({name:`Hawaiian `, price: 14.99, category:`Specialty`, popularity: 4, rating: 5, tags: [`Pinapples`, `Meat`]}) 
+const obj5 = new pizza ({name:`Vegan`, price: 15.99, category:`Create your own`, popularity: 1, rating: 1, tags: [`Vegan`, `Gross`, `Why`]})
+
+foodArr = [obj1, obj2, obj3, obj4, obj5]
+
+console.log(foodArr)
+
+
+// const obj1 = {
+//     name: ``, 
+//     price: 0,
+//     category: ``,
+//     popularity: 0, 
+//     rating: 0,
+//     tags: [``]
+// }
+
+// const obj2 = {
+//     name: ``, 
+//     price: 0,
+//     category: ``,
+//     popularity: 0, 
+//     rating: 0,
+//     tags: [``]
+// }
+
+// const obj3 = {
+//     name: ``, 
+//     price: 0,
+//     category: ``,
+//     popularity: 0, 
+//     rating: 0,
+//     tags: [``]
+// }
+
+// const obj4 = {
+//     name: ``, 
+//     price: 0,
+//     category: ``,
+//     popularity: 0, 
+//     rating: 0,
+//     tags: [``]
+// }
+
+// const obj5 = {
+//     name: ``, 
+//     price: 0,
+//     category: ``,
+//     popularity: 0, 
+//     rating: 0,
+//     tags: [``]
+// }
+
+// const foodArr = [obj1, obj2, obj3, obj4, obj5]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -134,8 +206,11 @@ console.log(pizza.category)
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+ const filteredFood = foodArr.filter(pizzaTest => {
+     pizzaTest.tags.icludes(`Favorites`)
+     return pizzaTest
+ })
+// Im getting popularity is not defined?!? Skip it, running out of time. 
 
 
 //////////////////PROBLEM 5////////////////////
@@ -180,6 +255,20 @@ console.log(pizza.category)
 //CODE HERE
 
 
+// REVEIW ARROW FXs AND CALLBACKS Running out of time. 
+
+const filterByProperty = (`property`, `number`, `type`) => {
+    let property = `This is the property`
+    let number = 5 
+    let type = ('above' || `below`) 
+
+    filArr = []; 
+    filArr
+}
+
+
+
+
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -188,3 +277,5 @@ console.log(pizza.category)
 */
 
 //CODE HERE
+
+filteredByProperty( )
