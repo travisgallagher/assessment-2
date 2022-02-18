@@ -21,6 +21,17 @@
 
 //CODE HERE
 
+class Employee {
+    constructor(name, shifts) {
+        this.name = name; 
+        this.shifts = shifts; 
+    }
+
+    getSchedule (){
+        console.log(`${this.name} works on ${this.shifts}`)
+    }
+}
+
 
 
 /*
@@ -35,6 +46,8 @@
 
 //CODE HERE
 
+let empOne = new Employee(`Travis`, `friday nights, and sunday mornings`)
+
 /*
     Call the `getSchedule` method on the
     `empOne` object.
@@ -42,6 +55,7 @@
 
 //CODE HERE
 
+getSchedule(empOne); 
 
 /*
     Make a copy of the empOne object
@@ -57,6 +71,8 @@
 
 //CODE HERE
 
+
+// COME BACK TO. 
 
 
 //////////////////PROBLEM 2////////////////////
