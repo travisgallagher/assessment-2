@@ -35,8 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const initialPrice = cart[0].price;  
+const summedPrice = cart.reduce((prevPrice, currPrice) => {prevPrice + currPrice}, initialPrice)
 
+console.log(summedPrice)
+// getting undefined, have to move on. 
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +57,12 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (`cartTotal`, `couponValue`, `tax`) => (
+    {
 
-
+    }
+)
+// Dont have time keep going
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -88,3 +95,5 @@ const cart = [
 */
 
 //CODE HERE
+
+// running out of time come back later. 
