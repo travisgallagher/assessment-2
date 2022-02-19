@@ -22,11 +22,18 @@
 */
 
 //CODE HERE
+// const arrow = () => ({stuff}) // Directly returns something implied return
+// const arrow = () => {
+//     if(stuff){
+//          stuff
+//     } else {
+//         "dont"
+//     }
+//     return stuff
+// }                                // you put functionality in the brackets
 
-const greetUser = (username) => ({
-        return: `Welcome back, ${username}`
-    }
-)
+const greetUser = (username) => (`Welcome back, ${username}`)
+// const greetUser = (username) => `Welcome back, ${username}` // we could also do this way. 
 
 console.log(greetUser(`Travis`)); 
 
@@ -51,12 +58,13 @@ console.log(greetUser(`Travis`));
         // `You're in our delivery zone!`
 */
 
+// three pieces of fx: parameters(@params), what is the logic (what am i trying to accomplish), what am i expecting to get it to return. 
+
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
 const canWeDeliver = (zipCode) => {
-
     const variable1 = deliveryAreaZipCodes.includes(zipCode)
 
     if(variable1 === true){
@@ -66,7 +74,7 @@ const canWeDeliver = (zipCode) => {
     }
     }
 
-// console.log(canWeDeliver(`84065`))
+console.log(canWeDeliver(84065))
 
 
 /* 
@@ -89,19 +97,13 @@ const canWeDeliver = (zipCode) => {
 // CODE HERE
 
 const canWeDeliverTwo = (passedZipCode) => {
-    let answer;
-    let stop;
-   deliveryAreaZipCodes.forEach((zipCode) => {
-        if(zipCode === passedZipCode){
-            answer =`You are eligible for delivery!`
-            stop = true
-            return;
-        } else {
-            if(stop) return;
-            answer =`You are outside of our delivery zone.` 
-        }
-    })
-    return answer
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+       if(deliveryAreaZipCodes[0] === passedZipCode) {
+           return `You are eligible for delivery!`
+            }
+
+        return `You are outside of our delivery zone.` 
+    }
 }
 console.log(canWeDeliverTwo(85205))
 
@@ -118,7 +120,7 @@ console.log(canWeDeliverTwo(85205))
 
     Read on for more instructions.
 */
-
+// key: value
 const deals = [
     {
         title: '15% Off!', 
@@ -130,6 +132,7 @@ const deals = [
     }
 ]
 
+// {"key":"value"}
 /*
     The owner has decided to take the 15% off
     deal down to 10%.
@@ -142,13 +145,10 @@ const deals = [
 //CODE HERE
 
 // OG deals to test if it worked
-
 console.log(deals)
 
-
-const updatedDeals = deals[0].title.replace(`15% Off!`, `10% Off!`)
-
-console.log({updatedDeals})
+const updatedDeals = deals[0].title.replace(`15% Off!`, `10% Off!`);
+console.log({updatedDeals});
 
 
 /*
@@ -166,6 +166,5 @@ console.log({updatedDeals})
 
 //CODE HERE
 
-const updatedDesc = deals[1].desc.replace(`March`, `April`)
-
+const updatedDesc = deals[1].desc.replace(`March`, `April`).trim()
 console.log({updatedDesc})

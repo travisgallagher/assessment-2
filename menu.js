@@ -33,12 +33,12 @@
 //CODE HERE
 
 const pizza = {
-    name: ``, 
-    price: 0,
-    category: ``,
-    popularity: 0, 
-    rating: 0,
-    tags: [``]
+    name: ``, //`pepperoni
+    price: 0, // 7.99
+    category: ``, // `entree`
+    popularity: 0, // 8
+    rating: 0, // 4
+    tags: [``]  // [`pepperoni`, ]
 }
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +54,7 @@ const pizza = {
 // popularity we will have 5/5 be the highest like 5 stars on yelp 
 
 pizza.popularity = 5
-console.log(pizza.popularity)
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -67,7 +67,7 @@ console.log(pizza.popularity)
 
 pizza.tags = [`Gluten-Free`, `Kids`, `Vegan`]; 
 
-console.log(pizza.tags[1]); 
+// console.log(pizza.tags[1]); 
 
 
 /*
@@ -78,17 +78,13 @@ console.log(pizza.tags[1]);
 */
 
 //CODE HERE
-console.log(pizza)
-
-let {priceOff} = pizza
-console.log(pizza.priceOff)
-
-// I am confused by the question, so i created a new variable `priceOff` like if they have discounts or something. Hopefully thats right?
+// review 
+// let {price} = pizza
+// console.log(price)
 
 let {price} = pizza
-console.log(pizza.price)
-// If you were just looking for the value of price, here it is haha
-
+// console.log(price)
+// let pr = pizza.price
 /*
     Fourth, and last, destructure the category
     property.
@@ -101,7 +97,7 @@ console.log(pizza.price)
 pizza.category = `Create your own`
 
 let {category} = pizza
-console.log(pizza.category)
+// console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -117,80 +113,15 @@ console.log(pizza.category)
 */
 
 //CODE HERE
+const pizza1 = {name: `Gluten-Free`, price: 15.99, category: `Create your own`, popularity: 2, rating: 1, tags: [`GF`, `Kids`, `Tastes like cardboard`]};
+const pizza2 = {name:`Pepperoni`, price: 8.99, category:`Large pizza`, popularity: 5, rating: 4, tags: [`Favorites`, `Kids`, `Everyone loves`]};
+const pizza3 = {name:`Cheese`, price: 7.99, category:`Large`, popularity: 3, rating: 4, tags: [`Favorites`, `Basic`, `Plain`]}; 
+const pizza4 = {name:`Hawaiian `, price: 14.99, category:`Specialty`, popularity: 4, rating: 5, tags: [`Pineapples`, `Meat`]}; 
+const pizza5 = {name:`Vegan`, price: 15.99, category:`Create your own`, popularity: 1, rating: 1, tags: [`Vegan`, `Gross`, `Why`]};
 
-// const pizza = {
-//     name: ``, 
-//     price: 0,
-//     category: ``,
-//     popularity: 0, 
-//     rating: 0,
-//     tags: [``]
-// }
+foodArr = [pizza1, pizza2, pizza3, pizza4, pizza5]
 
-// let name = pizza.name()
-// const pizzaCon = pizza.constructor (name, price, category, popularity, rating, tags)
-
-
-// couldnt get name to work, skip it
-const pizzaCon = pizza.constructor (price, category, popularity, rating, tags)
-
-const obj1 = new pizza ({name: `Gluten-Free`, price: 15.99, category: `Create your own`, popularity: 2, rating: 1, tags: [`GF`, `Kids`, `Tastes like cardboard`]})
-const obj2 = new pizza ({name:`Pepporoni`, price: 8.99, category:`Large pizza`, popularity: 5, rating: 4, tags: [`Favorites`, `Kids`, `Everyone loves`]})
-const obj3 = new pizza ({name:`Cheese`, price: 7.99, category:`Large`, popularity: 3, rating: 4, tags: [`Favorites`, `Basic`, `Plain`]}) 
-const obj4 = new pizza ({name:`Hawaiian `, price: 14.99, category:`Specialty`, popularity: 4, rating: 5, tags: [`Pinapples`, `Meat`]}) 
-const obj5 = new pizza ({name:`Vegan`, price: 15.99, category:`Create your own`, popularity: 1, rating: 1, tags: [`Vegan`, `Gross`, `Why`]})
-
-foodArr = [obj1, obj2, obj3, obj4, obj5]
-
-console.log(foodArr)
-
-
-// const obj1 = {
-//     name: ``, 
-//     price: 0,
-//     category: ``,
-//     popularity: 0, 
-//     rating: 0,
-//     tags: [``]
-// }
-
-// const obj2 = {
-//     name: ``, 
-//     price: 0,
-//     category: ``,
-//     popularity: 0, 
-//     rating: 0,
-//     tags: [``]
-// }
-
-// const obj3 = {
-//     name: ``, 
-//     price: 0,
-//     category: ``,
-//     popularity: 0, 
-//     rating: 0,
-//     tags: [``]
-// }
-
-// const obj4 = {
-//     name: ``, 
-//     price: 0,
-//     category: ``,
-//     popularity: 0, 
-//     rating: 0,
-//     tags: [``]
-// }
-
-// const obj5 = {
-//     name: ``, 
-//     price: 0,
-//     category: ``,
-//     popularity: 0, 
-//     rating: 0,
-//     tags: [``]
-// }
-
-// const foodArr = [obj1, obj2, obj3, obj4, obj5]
+// console.log(foodArr);
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -205,21 +136,21 @@ console.log(foodArr)
 */
 
 //CODE HERE
-
- const filteredFood = foodArr.filter(pizzaTest => {
-     pizzaTest.tags.icludes(`Favorites`)
-     return pizzaTest
- })
-// Im getting popularity is not defined?!? Skip it, running out of time. 
-
+const filterByTags = (query) => {
+   const newFoodArr = foodArr.filter((currentPizza) => currentPizza.tags.includes(query));
+   return newFoodArr
+}
+// console.log(filterByTags(`Favorites`));
 
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
     more flexible than just filtering for one
     value. We want to be able to filter for 
-    food that has above a certain rating, 
-    below a certain price, or any other combo.
+    food that has above a 
+    certain rating, 
+    below a 
+    certain price, or any other combo.
 
     Write a function called `filterByProperty`
     that takes in three arguments: `property`, 
@@ -245,7 +176,7 @@ console.log(foodArr)
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
         `number` passed in
     
@@ -254,28 +185,74 @@ console.log(foodArr)
 
 //CODE HERE
 
+// const filterByProperty = (property, number, type) => {
+//    const filteredFoodArr = foodArr.filter((currentPizza) => {
+//         if(property === "price") {
+//             if(type === "above") {
+//                 return currentPizza.price >= number
+//             }
+//             if(type === "below") {
+//                 return currentPizza.price <= number
+//             }
+//         }  
+//         if(property === "popularity") {
+//             if(type === "above") {
+//                 return currentPizza.popularity >= number
+//             }
+//             if(type === "below") {
+//                 return currentPizza.popularity <= number
+//             }
+//         }  
+//         if(property === "rating") {
+//             if(type === "above") {
+//                 return currentPizza.rating >= number
+//             }
+//             if(type === "below") {
+//                 return currentPizza.rating <= number
+//             }
+//         }  
+       
+//     })
+//     return filteredFoodArr
+// }
 
-// REVEIW ARROW FXs AND CALLBACKS Running out of time. 
-
-const filterByProperty = (`property`, `number`, `type`) => {
-    let property = `This is the property`
-    let number = 5 
-    let type = ('above' || `below`) 
-
-    filArr = []; 
-    filArr
-}
-
-
-
+const filterByProperty = (property, number, type) => {
+    const filteredFoodArr = foodArr.filter((currentPizza) => {
+         if(property === "price") {
+             if(type === "above") {
+                 return currentPizza.price >= number
+             } else {
+                 return currentPizza.price <= number
+             }
+         } else if (property === "popularity") {
+            if(type === "above") {
+                return currentPizza.popularity >= number
+            } else {
+                return currentPizza.popularity <= number
+            }
+         } else {
+            if(type === "above") {
+                return currentPizza.rating >= number
+            } else {
+                return currentPizza.rating <= number
+            }
+         }
+     })
+     return filteredFoodArr
+ }
 
 /*
     Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+    in a value for each parameter.
 
     You'll have to console.log to see the filtered array
 */
 
 //CODE HERE
+console.log(filterByProperty(`price`, 15, `above`))
+console.log(filterByProperty(`popularity`, 3, `below`))
 
-filteredByProperty( )
+
+
+
+

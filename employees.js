@@ -27,12 +27,12 @@ class Employee {
         this.shifts = shifts; 
     }
 
-    getSchedule (){
-        console.log(`${this.name} works on ${this.shifts}`)
+    getSchedule(){
+        console.log(`${this.name} works on ${this.shifts}`);
     }
 }
 
-
+// console.log(new Employee('Travis',"tues:22:00"));
 
 /*
     Create a new instance of your class.
@@ -46,16 +46,15 @@ class Employee {
 
 //CODE HERE
 
-let empOne = new Employee(`Travis`, `friday nights, and sunday mornings`)
-
+let empOne = new Employee(`Travis`, "friday nights, sunday mornings");
+// console.log({empOne});
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-
-getSchedule(empOne); 
+// empOne.getSchedule(); 
 
 /*
     Make a copy of the empOne object
@@ -70,9 +69,8 @@ getSchedule(empOne);
 */
 
 //CODE HERE
-
-
-// COME BACK TO. 
+const empTwo = new Employee({ name:"nick",...empOne,});
+console.log({empTwo});
 
 
 //////////////////PROBLEM 2////////////////////

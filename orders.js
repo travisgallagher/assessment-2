@@ -32,18 +32,19 @@
 //CODE HERE
 
 class Ticket {
-    constructor(items, orderTime, customerId, status){
+    constructor(items, orderTime, customerId){
+        this.items = items;
+        this.orderTime = orderTime;
+        this.customerId = customerId;
         this.status = `queued`; 
     }
 
-    updateStatus(newStatus){
-        newStatus = this.status
-        console.log(`The order for customer ${customerId} is now ${newStatus}`)
-    }
+    updateStatus(newStatus){ this.status = newStatus}
     
 }
-
-
+let ticket1 = new Ticket([],"1300","86435488541");
+ticket1.updateStatus(`The order for customer ${ticket1.customerId} is now ${ticket1.status}`)
+console.log({ticket1})
 /*
     Create a new instance of your class.
     Save it to a variable called `firstTicket`.
@@ -56,13 +57,9 @@ class Ticket {
 */
 
 //CODE HERE
-
-let firstTicket = {
-    items: `Pizza, bread, and soda`, 
-    orderTime: 703, 
-    customerId: 575
-}
-
+const firstTicket = new Ticket( ["Pizza", "Bread", "soda"],  "1300",  "575");
+firstTicket.updateStatus(`The order for customer ${firstTicket.customerId} is now ${firstTicket.status}`)
+console.log({firstTicket})
 
 /*
     Call the `updateStatus` method on
@@ -71,7 +68,5 @@ let firstTicket = {
 */
 
 //CODE HERE
-
 firstTicket.updateStatus(`cooking`)
-
-// not working, moving on 
+console.log({firstTicket})

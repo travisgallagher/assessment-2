@@ -34,12 +34,10 @@ const cart = [
 ]
 
 //CODE HERE
-
-const initialPrice = cart[0].price;  
-const summedPrice = cart.reduce((prevPrice, currPrice) => {prevPrice + currPrice}, initialPrice)
-
-console.log(summedPrice)
-// getting undefined, have to move on. 
+// let total = 0;
+// const summedPrice = cart.forEach(cartItem => total += cartItem.price)
+const summedPrice = cart.reduce((total, prev) => total += prev.price,0)
+console.log({summedPrice})
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -57,12 +55,11 @@ console.log(summedPrice)
 */
 
 //CODE HERE
-const calcFinalPrice = (`cartTotal`, `couponValue`, `tax`) => (
-    {
-
-    }
-)
-// Dont have time keep going
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    let finalPrice = cartTotal + (cartTotal * tax) - couponValue
+    return finalPrice 
+}
+console.log(calcFinalPrice(15, 3, .05))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -86,7 +83,15 @@ const calcFinalPrice = (`cartTotal`, `couponValue`, `tax`) => (
 
 /*
     TEXT ANSWER HERE
-
+    customer {
+        customerId: string;
+        fName: string;m
+        lName: string;
+        email: string;
+    }
+    We need the customerId so that we can access more details about customer from db,
+    We need the first and last name so we can display the name
+    We would need the email to also display email on the page
 */
 
 /*
@@ -95,5 +100,9 @@ const calcFinalPrice = (`cartTotal`, `couponValue`, `tax`) => (
 */
 
 //CODE HERE
-
-// running out of time come back later. 
+const customer = {
+    customerId:"3545-2223-2552",
+    fName:"Travis",
+    lName:"Gallagher",
+    email:"travis@gmail.com"
+}
