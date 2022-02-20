@@ -32,7 +32,7 @@ class Employee {
     }
 }
 
-// console.log(new Employee('Travis',"tues:22:00"));
+console.log(new Employee('Travis',"tues:22:00"));
 
 /*
     Create a new instance of your class.
@@ -47,14 +47,16 @@ class Employee {
 //CODE HERE
 
 let empOne = new Employee(`Travis`, "friday nights, sunday mornings");
-// console.log({empOne});
+//console.log({empOne});
+
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-// empOne.getSchedule(); 
+
+empOne.getSchedule(); 
 
 /*
     Make a copy of the empOne object
@@ -69,9 +71,12 @@ let empOne = new Employee(`Travis`, "friday nights, sunday mornings");
 */
 
 //CODE HERE
-const empTwo = new Employee({ name:"nick",...empOne,});
-console.log({empTwo});
 
+const empTwo = new Employee ({
+    name: "James", 
+    ...empOne, 
+}); // still not working...
+console.log({empTwo}); 
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -98,7 +103,18 @@ console.log({empTwo});
 
 //CODE HERE
 
-
+class Manager extends Employee { 
+    constructor(name, shifts, employees) {
+        super(name, shifts);
+        this.employees = employees
+    }
+    getEmployees() {
+        console.log(`${this.name} manages ${this.employees}`);
+    }
+    addEmployee(emp) {
+        this.employees.push(emp);
+    }
+}
 
 /*
     Create a new instance of your class.
@@ -114,12 +130,25 @@ console.log({empTwo});
 //CODE HERE
 
 
+// KG note, must be array for .push to recognize. 
+const manager = new Manager(
+    "Winston",
+    "weekday mornings, weekday afternoons",
+    ["Cece", "Schmidt"]
+);
+console.log({manager});
+
+
+
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
 
 //CODE HERE
+
+console.log(manager.getEmployees()); 
+
 
 /*
     Call the `addEmployee` method on the 
@@ -129,6 +158,10 @@ console.log({empTwo});
 
 //CODE HERE 
 
+manager.addEmployee("Coach"); 
+    console.log({manager}); 
+
+
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -136,3 +169,4 @@ console.log({empTwo});
 */
 
 //CODE HERE
+manager.getEmployees(); 
